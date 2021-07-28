@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Browntuckerr/FullStackWorkout/issues"
   },
-  "homepage": "https://github.com/Browntuckerr/FullStackWorkout#readme"
+  "homepage": "https://github.com/Browntuckerr/FullStackWorkout#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "sequelize": "^6.6.5"
+  }
 }
