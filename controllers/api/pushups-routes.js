@@ -12,9 +12,8 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   Pushups.create({
-    pushups_id: req.body.pushups_id,
-    pushups_reps: req.body.pushups_reps,
-    pushups_date: req.body.pushups_date,
+    amount: req.body.amount,
+    date: req.body.date,
   })
     .then((dbPushups) => res.json(dbPushups))
     .catch((err) => {
@@ -45,8 +44,8 @@ router.delete("/:id", (req, res) => {
 router.put("/id", (req, res) => {
   Pushups.update(
     {
-      pushUps_reps: req.body.pushUps_reps,
-      pushUps_date: req.body.pushUps_date,
+      amount: req.body.amount,
+      date: req.body.date,
     },
     {
       where: {

@@ -12,9 +12,8 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   Running.create({
-    running_id: req.body.running_id,
-    running_distance: req.body.running_distance,
-    running_date: req.body.running_date,
+    distance: req.body.distance,
+    date: req.body.date,
   })
     .then((dbRunning) => res.json(dbRunning))
     .catch((err) => {
@@ -45,8 +44,8 @@ router.delete("/:id", (req, res) => {
 router.put("/id", (req, res) => {
   Running.update(
     {
-      running_date: req.body.running_date,
-      running_distance: req.body.running_distance,
+      distance: req.body.distance,
+      date: req.body.date,
     },
     {
       where: {
