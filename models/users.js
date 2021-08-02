@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Running extends Model {}
+class Users extends Model {}
 
-Running.init(
+Users.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,11 +11,11 @@ Running.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    distance: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    date: {
+    password: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -29,4 +29,4 @@ Running.init(
   }
 );
 
-module.exports = Running;
+module.exports = Users;
