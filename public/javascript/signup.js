@@ -8,7 +8,7 @@ function signupFormHandler(event) {
   console.log("SCRIPT IS CONNECTED")
   
     if (email && password) {
-      fetch('/workout', {
+      fetch('/workout/users', {
         method: 'post',
         body: JSON.stringify({
           email,
