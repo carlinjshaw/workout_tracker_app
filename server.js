@@ -10,30 +10,30 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
 //uses express handlebars as template engine
 
-const exphbs = require('express-handlebars');
+const exphbs = require("express-handlebars");
 const hbs = exphbs.create({});
 
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 //session and sequelize stuff
 
-const session = require('express-session');
+const session = require("express-session");
 
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const sess = {
-  secret: 'Super secret secret',
+  secret: "Super secret secret",
   cookie: {},
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
-  })
+    db: sequelize,
+  }),
 };
 
 app.use(session(sess));
@@ -41,18 +41,18 @@ app.use(session(sess));
 //routes for test html
 
 app.get("/workout/home", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "views/layouts/main.handlebars"));
 });
 
 app.get("/workout/login", (req, res) => {
   res.sendFile(path.join(__dirname, "login.html"));
 });
 
-app.get("/workout/calendar", (req, res) => {
+app.get("/calendar", (req, res) => {
   res.sendFile(path.join(__dirname, "calendar.html"));
 });
 
-app.get("/workout/goals", (req, res) => {
+app.get("/goals", (req, res) => {
   res.sendFile(path.join(__dirname, "goals.html"));
 });
 
@@ -86,8 +86,6 @@ app.delete("/api/goals:id", (req, res) => {
 
 app.use(routes);
 //join the public styles and logic
-
-
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
