@@ -11,57 +11,55 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  console.log("POST IS RUNNING")
-    Users.create({
+  console.log("POST IS RUNNING");
+  Users.create({
     email: req.body.email,
     password: req.body.password,
   })
-  .then(dbUserData => {
+    .then((dbUserData) => {
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.email = dbUserData.email;
+        req.session.loggedIn = true;
+
+        res.json(dbUserData);
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+//route for signing in
+router.post("/login", (req, res) => {
+  // expects {email: 'lernantino@gmail.com', password: 'password1234'}
+  Users.findOne({
+    where: {
+      email: req.body.email,
+    },
+  }).then((dbUserData) => {
+    if (!dbUserData) {
+      res.status(400).json({ message: "No user with that email address!" });
+      return;
+    }
+
+    const validPassword = dbUserData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res.status(400).json({ message: "Incorrect password!" });
+      return;
+    }
+
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.email = dbUserData.email;
       req.session.loggedIn = true;
 
-      res.json(dbUserData);
-    })
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-  })
-  
-//route for signing in
-  router.post('/login', (req, res) => {
-    // expects {email: 'lernantino@gmail.com', password: 'password1234'}
-    Users.findOne({
-      where: {
-        email: req.body.email
-      }
-    }).then(dbUserData => {
-      if (!dbUserData) {
-        res.status(400).json({ message: 'No user with that email address!' });
-        return;
-      }
-  
-      const validPassword = dbUserData.checkPassword(req.body.password);
-  
-      if (!validPassword) {
-        res.status(400).json({ message: 'Incorrect password!' });
-        return;
-      }
-  
-      req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.email = dbUserData.email;
-        req.session.loggedIn = true;
-    
-        res.json({ user: dbUserData, message: 'You are now logged in!' });
-      });
+      res.json({ user: dbUserData, message: "You are now logged in!" });
     });
   });
-  
-    
+});
 
 // router.delete("/:id", (req, res) => {
 //     Users.destroy({
