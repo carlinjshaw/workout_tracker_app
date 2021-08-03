@@ -25,7 +25,7 @@ Users.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "running",
+    modelName: "users",
   }
 );
 
