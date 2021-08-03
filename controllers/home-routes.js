@@ -10,10 +10,10 @@ router.get('/signup', (req, res) => {
 
 
 router.get('/signin', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
+  // if (req.session.loggedIn) {
+  //   res.redirect('/');
+  //   return;
+  // }
   res.render('signin');
 });
 

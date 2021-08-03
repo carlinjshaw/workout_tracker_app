@@ -15,11 +15,12 @@ const seedAll = async () => {
   await seedPullups();
   console.log('------PULLUPS SEEDED--------');
 
+  await seedRunning();
+  console.log('------RUNNING SEEDED--------');
+
   await seedUsers();
   console.log('------USERS SEEDED----------');
 
-  await seedRunning();
-  console.log('------RUNNING SEEDED--------');
 
 
   process.exit(0);
