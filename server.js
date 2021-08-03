@@ -48,11 +48,11 @@ app.get("/workout/login", (req, res) => {
   res.sendFile(path.join(__dirname, "login.html"));
 });
 
-app.get("/workout/calendar", (req, res) => {
+app.get("/calendar", (req, res) => {
   res.sendFile(path.join(__dirname, "calendar.html"));
 });
 
-app.get("/workout/goals", (req, res) => {
+app.get("/goals", (req, res) => {
   res.sendFile(path.join(__dirname, "goals.html"));
 });
 
