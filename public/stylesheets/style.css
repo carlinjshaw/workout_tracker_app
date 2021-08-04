@@ -17,7 +17,7 @@ body {
   top: 0;
   left: 0;
   height: 100%;
-  width: 78px;
+  width: 100px;
   background: #11101d;
   padding: 6px 14px;
   transition: all 0.5s ease;
@@ -39,11 +39,13 @@ body {
 .sidebar .active .logo_content .logo {
   opacity: 1;
   pointer-events: none;
+  color: #fff;
 }
 
 .logo_content .logo .logo_name {
   font-size: 20px;
   font-weight: 400;
+  color: #fff;
 }
 
 .sidebar #btn {
@@ -142,4 +144,80 @@ body {
   border-radius: 12px;
   line-height: 50px;
   text-align: center;
+}
+
+/* Signup */
+
+.signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.signupCon {
+  background-color: #11101d;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  max-width: 100%;
+  color: #fff;
+}
+
+.header {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px 40px;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.form {
+  padding: 30px 40px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form-control i {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+}
+
+.form-control small {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.form button {
+  background-color: #11101d;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
 }
