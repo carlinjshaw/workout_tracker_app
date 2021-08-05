@@ -26,7 +26,7 @@ body {
   width: 240px;
 }
 
-.sidebar .logo_content .logo {
+.sidebar.logo_content.logo {
   color: #fff;
   display: flex;
   height: 50px;
@@ -36,13 +36,13 @@ body {
   pointer-events: none;
 }
 
-.sidebar .active .logo_content .logo {
+.sidebar.active.logo_content.logo {
   opacity: 1;
   pointer-events: none;
   color: #fff;
 }
 
-.logo_content .logo .logo_name {
+.logo_content.logo.logo_name {
   font-size: 20px;
   font-weight: 400;
   color: #fff;
@@ -61,7 +61,7 @@ body {
   transform: translate(-50%);
 }
 
-.sidebar .active #btn {
+.sidebar.active #btn {
   left: 90%;
 }
 
