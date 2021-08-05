@@ -16,6 +16,10 @@ router.get("/signin", (req, res) => {
   res.render("signin");
 });
 
+// router.get("/tracker", (req, res) => {
+//   res.render("tracker")
+// })
+
 router.get("/", (req, res) => {
   console.log(req.session);
 
