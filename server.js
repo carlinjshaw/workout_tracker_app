@@ -40,19 +40,19 @@ app.use(session(sess));
 
 //routes for test html
 
-app.get("/workout/home", (req, res) => {
-  res.sendFile(path.join(__dirname, "views/layouts/main.handlebars"));
-});
+// app.get("/workout/home", (req, res) => {
+//   res.sendFile(path.join(__dirname, "views/layouts/main.handlebars"));
+// });
 
 app.get("/workout/login", (req, res) => {
   res.sendFile(path.join(__dirname, "login.html"));
 });
 
-app.get("/calendar", (req, res) => {
+app.get("/workout/calendar", (req, res) => {
   res.sendFile(path.join(__dirname, "calendar.html"));
 });
 
-app.get("/goals", (req, res) => {
+app.get("/workout/goals", (req, res) => {
   res.sendFile(path.join(__dirname, "goals.html"));
 });
 
