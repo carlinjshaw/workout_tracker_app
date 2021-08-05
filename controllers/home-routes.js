@@ -20,6 +20,14 @@ router.get("/signin", (req, res) => {
 //   res.render("tracker")
 // })
 
+router.get("/tracker/running?workout=running", (req, res) => {
+  res.render("tracker");
+});
+
+router.get("/tracker/running?workout=pullup", (req, res) => {
+  res.render("pullup");
+});
+
 router.get("/", (req, res) => {
   console.log(req.session);
 
