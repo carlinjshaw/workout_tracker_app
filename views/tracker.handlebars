@@ -1,41 +1,27 @@
+<div class="container chart">
 
-    <div>
-	<canvas id="myChart"></canvas>
+    <div class="rows" id="newChart">
+    
     </div>
 
-{{!-- script for running data of a particular user --}}
-<div id="runningData" data-running={{runData}}></div>
+    <div class="row">
+        <div class="col-sm-12 d-flex justify-content-center">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Workout Tracker</h5>
+                    <p class="card-text">Choose one of the following workouts:</p>
+                        <form>
+                        <select name="workouts" id="workouts">
+                            <option value="" >Choose one</option>
+                            <option value="pullup" id="pullup">PullUps</option>
+                            <option value="pushup" id="pushup">PushUps</option>
+                            <option value="running" id="running">Running</option>
+                        </select>
+                        <button class="submit" type="button" id="trackBtn" onclick="GetSelectedText()"><i class='bx bx-trending-up'></i>Track Progress!</button>
+                        </form>
+                </div>
+            </div>
+    </div>
 
-    <script>
-        const runData = JSON.parse(document.querySelector('#runningData').getAttribute('data-running'))
-
-        console.log(runData)
-
-        //make array of only the distances for the y axis
-        const distances = []
-        runData.forEach((entry) => distances.push(entry.distance))
-
-        //make array of only the dates for the x axis
-        const dates = []
-        runData.forEach((entry) => dates.push(entry.date))
-
-        {
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var myChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: dates,
-                    datasets: [{
-                        data: distances,
-                        label: "Total",
-                        borderColor: "#3e95cd",
-                        backgroundColor: "#7bb6dd",
-                        fill: false,
-                    }
-
-                    ]
-                },
-            });
-          
-        }
-    </script>
+    </div>
+    <script src="/javascript/mainhtml.js"></script>
