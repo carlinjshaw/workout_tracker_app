@@ -1,0 +1,126 @@
+
+ 
+ <div>
+	<canvas id="myChart"></canvas>
+    </div>
+
+
+    {{!-- previous attempt at tracker page --}}
+
+
+    
+
+    <div class="row">
+        <div class="col-sm-12 d-flex justify-content-center">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Workout Tracker</h5>
+                    <p class="card-text">Choose one of the following workouts:</p>
+                        <form>
+                        <select id="country">
+                            <option>-- Select --</option>
+                            <option>Running</option>
+                            <option>Pushups</option>
+                            <option>Pullups</option>
+                        </select>
+                       <script>
+                        function GetSelectedText() {
+                            var e = document.getElementById("country");
+                            var result = e.options[e.selectedIndex].text;
+                            console.log(result)
+                        }
+                    </script>
+         <button type="button" onclick="GetSelectedText()">Get Selected Text</button>
+                        </form>
+                </div>
+            </div>
+    </div>
+    </div>
+
+
+<div class="container">
+{{> empty }}
+
+{{#if_eq results 'Running'}}
+    {{> running-graph }}
+{{else}}
+{{/if}}
+
+{{#if_eq results 'Pullups'}}
+    {{> pullups-graph }}
+{{else}}
+
+{{/if_eq}}
+</div>
+
+
+    <script src="/javascript/mainhtml.js"></script>
+
+
+    {{!-- another attempt --}}
+
+    
+<script>
+
+var btn = document.querySelector('#btn');
+var sidebar = document.querySelector('.sidebar');
+var trackBtn = document.querySelector('#trackBtn');
+var dropdown = document.querySelector('#workouts');
+var chart = document.querySelector('.chart');
+var newChart = document.querySelector('#newChart')
+
+    var dataDiv = document.createElement("div")
+    dataDiv.textContent ='<div id="pullupsData" data-pullups={{pullData}}'
+
+
+GetSelectedText = () => {
+    var e = document.getElementById('workouts')
+    var result = e.options[e.selectedIndex].value;
+
+    if (result === "pullup") {
+        pullUpChart();
+    } else if (result === "pushup") {
+        pushUpChart();
+
+    } else if (result === "running") {
+        runningChart();
+    }
+}
+
+pullUpChart = () => {
+
+
+      const pullData = JSON.parse(document.querySelector('#pullupsData').getAttribute('data-pullups'))
+
+        console.log(pullData)
+
+        //make array of only the distances for the y axis
+        const amounts = []
+        pullData.forEach((entry) => amounts.push(entry.amount))
+
+        //make array of only the dates for the x axis
+        const dates = []
+        pullData.forEach((entry) => dates.push(entry.date))
+
+        {
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        data: amounts,
+                        label: "Total",
+                        borderColor: "#3e95cd",
+                        backgroundColor: "#7bb6dd",
+                        fill: false,
+                    }
+
+                    ]
+                },
+            });
+          
+        }
+        newChart.append(dataDiv)
+}
+</script>

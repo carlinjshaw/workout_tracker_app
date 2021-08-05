@@ -1,4 +1,4 @@
-let btn = document.querySelector("#btn");
+// let btn = document.q/uerySelector("#btn");
 let sidebar = document.querySelector(".sidebar");
 
 btn.onclick = function () {
