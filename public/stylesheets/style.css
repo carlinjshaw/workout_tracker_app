@@ -10,6 +10,7 @@ body {
   min-height: 100vh;
   width: 100%;
   overflow: hidden;
+  background-color: grey;
 }
 
 .sidebar {
@@ -242,4 +243,16 @@ body {
 
 #trackBtn.active #workout {
   margin-top: 80px;
+}
+
+#running-graph-container {
+  margin-left: 200px;
+}
+
+#pushups-graph-container {
+  margin-left: 200px;
+}
+
+#pullups-graph-container {
+  margin-left: 200px;
 }

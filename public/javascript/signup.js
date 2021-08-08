@@ -25,7 +25,8 @@ function loginFormHandler(event) {
   console.log("SCRIPT IS CONNECTED");
 
   if (email && password) {
-    fetch("/workout/users/login", {
+    console.log("CONNECTED TO FETCH LOGIC");
+    fetch("/workout/users", {
       method: "post",
       body: JSON.stringify({
         email,
@@ -42,3 +43,6 @@ document
   .querySelector("#login-form")
   .addEventListener("submit", loginFormHandler);
 // document.querySelector('.submit').addEventListener('click', signupFormHandler);
+document
+  .querySelector("#signup-form")
+  .addEventListener("submit", signupFormHandler);

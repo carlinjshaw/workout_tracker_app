@@ -1,13 +1,11 @@
-<div class="container">
-    <div class="row" id="chartDiv">
-        <div>
-            <canvas id="myChart"></canvas>
-            <div id="runningData" data-running={{ runData }}></div>;
-           <div id="pushupsData" data-pushups={{ pushData }}></div>;
-            <div id="pullupsData" data-pullups={{ pullData }}></div>;
-        </div>
+
+
+
+<div class="container chart">
+
+    <div class="rows" id="newChart">
+
     </div>
-     
 
     <div class="row">
         <div class="col-sm-12 d-flex justify-content-center">
@@ -15,9 +13,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Workout Tracker</h5>
                     <p class="card-text">Choose one of the following workouts:</p>
-                    <form>
+                        <form id="tracker-form">
                         <select name="workouts" id="workouts">
-                            <option value="">Choose one</option>
+                            <option value="" >Choose one</option>
                             <option value="pullup" id="pullup">PullUps</option>
                             <option value="pushup" id="pushup">PushUps</option>
                             <option value="running" id="running">Running</option>
