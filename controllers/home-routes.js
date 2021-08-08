@@ -20,6 +20,10 @@ router.get("/signin", (req, res) => {
 //   res.render("tracker")
 // })
 
+router.get("/addworkout", (req, res) => {
+  res.render("input")
+})
+
 router.get("/", (req, res) => {
   console.log(req.session);
 

@@ -1,29 +1,28 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>JavaScript - Get selected value from dropdown list</title>
-    </head>
-
-    <body>
-        <h1>Choose which workout to track</h1>
-        
-        <select id="country">
-            <option>-- Select --</option>
-            <option>Running</option>
-            <option>Pushups</option>
-            <option>Pullups</option>
+<form class="dataentry">
+    <div class="trackerselector">
+        <div class="DateSelect">
+        <body>
+            <input type="date" name="Workoutdate" placeholder="select date" >
+        </body> 
+        </div>  
+    </div>
+    <div class="WorkoutSelect">
+        <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg example">
+            <option selected>Select a workout</option>
+            <option value="1">Pushups</option>
+            <option value="2">Situps</option>
+            <option value="3">Running</option>
         </select>
+    </div>
+    <div class="TimeSelect">
+        <div class="input-group input-group-sm">
+            <span class="input-group-text" id="inputGroup-sizing-lg">How Much</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+        </div> 
+    </div>
+</div>
 
-        <script>
-            function GetSelectedText(){
-                var e = document.getElementById("country");
-                var result = e.options[e.selectedIndex].text;
-                console.log(result)
-            }
-            
-        </script>
+<button>Submit</button>
+</form>
 
-        <button type="button" onclick="GetSelectedText()">Get Selected Text</button>
-    </body>
 
-</html>
