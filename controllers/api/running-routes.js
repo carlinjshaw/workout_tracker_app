@@ -14,6 +14,7 @@ router.post("/", (req, res) => {
   Running.create({
     distance: req.body.distance,
     date: req.body.date,
+    user_id: req.session.user_id
   })
     .then((dbRunning) => res.json(dbRunning))
     .catch((err) => {

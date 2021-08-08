@@ -72,7 +72,7 @@ router.get('/running', (req, res) => {
   
   //gets all pullups data and sends to tracker handlebar
   router.get('/pullups', (req, res) => {
-    // console.log(req.session);
+    console.log("pullups get routes back end");
     console.log('========tracker with pullups==========');
     console.log(req.session.user_id)
     Pullups.findAll({

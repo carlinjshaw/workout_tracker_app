@@ -14,6 +14,7 @@ router.post("/", (req, res) => {
   Pushups.create({
     amount: req.body.amount,
     date: req.body.date,
+    user_id: req.session.user_id
   })
     .then((dbPushups) => res.json(dbPushups))
     .catch((err) => {

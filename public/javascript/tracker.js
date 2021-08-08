@@ -21,6 +21,7 @@ function startFunction (event) {
 }
 
 pullUpChart = () => {
+    console.log("fetch is called")
     fetch('/tracker/pullups', {
         method: 'get',
         // body: JSON.stringify({
@@ -31,7 +32,10 @@ pullUpChart = () => {
         
         // headers: { 'Content-Type': 'application/json' }
       }).then((response) => {
-          res.JSON(response)
+
+        document.location.replace("/tracker/pullups")
+        //   res.JSON(response)
+        console.log(response)
         })
 }
 
