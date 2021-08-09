@@ -10,17 +10,16 @@ const seedAll = async () => {
   console.log("-------SYNC STARTED-------");
 
   await seedUsers();
-  console.log('------USERS SEEDED----------');
+  console.log("------USERS SEEDED----------");
 
   await seedPullups();
-  console.log('------PULLUPS SEEDED--------');
+  console.log("------PULLUPS SEEDED--------");
 
   await seedPushups();
   console.log("--------PUSHUPS SEEDED------");
 
   await seedRunning();
-  console.log('------RUNNING SEEDED--------');
-
+  console.log("------RUNNING SEEDED--------");
 
   process.exit(0);
 };

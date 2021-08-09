@@ -10,10 +10,37 @@ router.get("/", (req, res) => {
     });
 });
 
+// router.get('/pullups', (req, res) => {
+//   console.log("pullups get routes back end");
+//   console.log('========tracker with pullups==========');
+//   console.log(req.session.user_id)
+//   Pullups.findAll({
+//     where: {
+//       user_id: req.session.user_id
+//     },
+//     attributes: [
+//       'amount',
+//       'date'
+//     ],
+//   })
+//     .then(pullupsData => {
+//       const pullsData = pullupsData.map(pushs => pushs.get({ plain: true }));
+//       const pullData = JSON.stringify(pullsData)
+//       console.log(pullData)
+//       res.render('pullups-graph', {pullData});
+
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
+
 router.post("/", (req, res) => {
   Pullups.create({
     amount: req.body.amount,
     date: req.body.date,
+    user_id: req.session.user_id,
   })
     .then((dbPullups) => res.json(dbPullups))
     .catch((err) => {

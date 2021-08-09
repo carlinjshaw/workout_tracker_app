@@ -1,12 +1,12 @@
-const router = require('express').Router();
+const router = require("express").Router();
 
-const apiRoutes = require('./api');
-const homeRoutes = require('./home-routes.js');
-const trackerRoutes = require('./tracker-routes.js');
+const apiRoutes = require("./api");
+const homeRoutes = require("./home-routes.js");
+const trackerRoutes = require("./tracker-routes.js");
 
-router.use('/workout', apiRoutes);
-router.use('/tracker', trackerRoutes);
-router.use('/', homeRoutes);
+router.use("/workout", apiRoutes);
+router.use("/tracker", trackerRoutes);
+router.use("/", homeRoutes);
 
 router.use((req, res) => {
   res.send("<h1>Wrong Route!</h1>");

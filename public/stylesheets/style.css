@@ -243,3 +243,13 @@ body {
 #trackBtn.active #workout {
   margin-top: 80px;
 }
+
+#pushUpPic {
+  width: 600px;
+  height: auto;
+}
+
+#runningPic {
+  width: 600px;
+  height: auto;
+}
