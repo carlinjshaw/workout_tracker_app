@@ -1,28 +1,39 @@
-<div class="container">
-<form id="add-workout-form" class="dataentry">
-    <div class="trackerselector">
-        <div class="DateSelect">
-        <body>
-            <input id="date-selector" type="date" name="Workoutdate" placeholder="select date" >
-        </body> 
-        </div>  
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-12 d-flex justify-content-center">
+            <div class="card">
+                <div class="card-body">
+                    <form id="add-workout-form" class="dataentry">
+                        <div class="trackerselector">
+                            <div class="DateSelect">
+
+                                <body>
+                                    <input id="date-selector" type="date" name="Workoutdate" placeholder="select date">
+                                </body>
+                            </div>
+                        </div>
+                        <div class="WorkoutSelect">
+                            <select id="workout-dropdown" class="form-select form-select-sm mb-3"
+                                aria-label=".form-select-lg example">
+                                <option selected>Select a workout</option>
+                                <option value="Pushups">Pushups</option>
+                                <option value="Pullups">Pullups</option>
+                                <option value="Running">Running</option>
+                            </select>
+                        </div>
+                        <div class="TimeSelect">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-text" id="inputGroup-sizing-lg">How Much</span>
+                                <input id="amount" type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-lg">
+                            </div>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="WorkoutSelect">
-        <select id="workout-dropdown" class="form-select form-select-sm mb-3" aria-label=".form-select-lg example">
-            <option selected>Select a workout</option>
-            <option value="Pushups">Pushups</option>
-            <option value="Pullups">Pullups</option>
-            <option value="Running">Running</option>
-        </select>
-    </div>
-    <div class="TimeSelect">
-        <div class="input-group input-group-sm">
-            <span class="input-group-text" id="inputGroup-sizing-lg">How Much</span>
-            <input id="amount" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-        </div> 
-    </div>
-<button type="submit">Submit</button>
-</form>
 </div>
 
 <script src="/javascript/addWorkout.js"></script>
