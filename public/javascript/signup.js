@@ -39,10 +39,10 @@ function loginFormHandler(event) {
   }
 }
 
-document
-  .querySelector("#login-form")
-  .addEventListener("submit", loginFormHandler);
+// document
+//   .querySelector("#login-form")
+//   .addEventListener("submit", loginFormHandler);
 // document.querySelector('.submit').addEventListener('click', signupFormHandler);
 document
-  .querySelector("#signup-form")
+  .querySelector("#signupBtn")
   .addEventListener("submit", signupFormHandler);
