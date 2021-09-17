@@ -2,7 +2,8 @@
 
 ## Description
 
-FullStack Workouts is a full stack website created mainly with the use of node.js, express, Mysql, and handlebars. The purpose of this web is to provide a simple and easier way for registered users to plan and keep track of their workouts throughout the month. It can keep track and graph your progression throughout the month and serve as a mental motivator to users.
+FullStack Workouts is a full stack website created mainly with the use of Node.js, Express.js, Sequelize, and Handlebars. The purpose of this web is to provide a simple and easier way for registered users to plan and keep track of their workouts throughout the month. It can keep track and graph your progression throughout the month and serve as a mental motivator to users.
+Creators were Browntuckerr carlinjshaw, and Nickjohn18.
 
 [App](https://damp-river-50096.herokuapp.com/)
 ![homepage](https://user-images.githubusercontent.com/81334326/128652558-e0dbe75c-560d-4325-9950-b1a6e7346f3c.png)
