@@ -28,12 +28,3 @@ Run mysql, source db/schema.sql, use workout_data, npm run seed and the npm star
 
 Carlin Shaw, Tucker Brown, Gilliespie Parker, and Nick John De Luna
 
-## License
-
-![badge](https://img.shields.io/badge/license-mit-brightgreen)
-
-## Tests
-
-None
-
-## Additional Info
