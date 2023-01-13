@@ -1,4 +1,6 @@
 function signupFormHandler(event) {
+  console.log("SIGN UP FORM IS CALLED")
+
   event.preventDefault();
   const email = document.querySelector("#email-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
@@ -43,6 +45,4 @@ function loginFormHandler(event) {
 //   .querySelector("#login-form")
 //   .addEventListener("submit", loginFormHandler);
 // document.querySelector('.submit').addEventListener('click', signupFormHandler);
-document
-  .querySelector("#signupBtn")
-  .addEventListener("submit", signupFormHandler);
+document.querySelector("#signUpBtn").addEventListener("click", signupFormHandler);
